@@ -9,7 +9,6 @@
 collision_mask = 0
 gravity_scale = 0.0
 sleeping = true
-freeze_mode = 1
 script = ExtResource("1_2gnfn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3vae1hn2qudi"]
+
+[ext_resource type="Texture2D" uid="uid://d0suaaavh11iu" path="res://Assets/Textures/Gather.png" id="1_vxjml"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lf0gk"]
+radius = 30.0
+height = 320.0
+
+[node name="Stone" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -35)
+texture = ExtResource("1_vxjml")
+offset = Vector2(1, -13)
+region_enabled = true
+region_rect = Rect2(0, 608, 375, 164)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -14)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_lf0gk")
+debug_color = Color(0.736017, 0, 0.128296, 0.419608)

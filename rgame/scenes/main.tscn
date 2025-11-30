@@ -1,35 +1,106 @@
-[gd_scene load_steps=6 format=3 uid="uid://xfa12lro4530"]
+[gd_scene load_steps=13 format=3 uid="uid://xfa12lro4530"]
 
-[ext_resource type="Script" uid="uid://cd1nxucwanvdc" path="res://scripts/main.gd" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://cwfc8pc2twm6a" path="res://scenes/follower_enemy.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://beu0cptft1dro" path="res://scenes/player.tscn" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://deaw226pciyqo" path="res://scenes/shooter_enemy.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://bltadbf6mj4nd" path="res://scenes/ship.tscn" id="5_tbgi4"]
+[ext_resource type="Shader" uid="uid://vrc5rp5ou1xx" path="res://Misc/Shader/FOG.gdshader" id="1_choun"]
+[ext_resource type="PackedScene" uid="uid://b4qmpmnxu68vw" path="res://Assets/Skins/Player.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://d2jhhjgvnaqlf" path="res://Assets/Skins/tree1.tscn" id="2_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://3wmootgb0nme" path="res://Assets/Skins/tree2.tscn" id="3_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://cpeju31scin5m" path="res://Assets/Skins/tigdik.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dc84ognrigc3t" path="res://Assets/Skins/slime.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b3vae1hn2qudi" path="res://Assets/Skins/stone.tscn" id="4_trceg"]
+[ext_resource type="PackedScene" uid="uid://coutovl7lvn4b" path="res://Assets/Skins/m_g_m.tscn" id="6_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://dtj7pg5ts1t1h" path="res://Assets/Skins/Crasher.tscn" id="10_jbj1t"]
 
-[node name="Main" type="Node2D"]
-script = ExtResource("1_ig7tw")
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_muem4"]
+noise_type = 3
+frequency = 0.0142
 
-[node name="Enemy_Timer" type="Timer" parent="."]
-wait_time = 5.0
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dp3eg"]
+seamless = true
+noise = SubResource("FastNoiseLite_muem4")
 
-[node name="Weapon_Timer" type="Timer" parent="."]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ld40"]
+shader = ExtResource("1_choun")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_dp3eg")
+shader_parameter/density = 0.575
+shader_parameter/speed = Vector2(0, 0)
 
-[node name="Start_Timer" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
+[node name="TestWorld" type="Node2D"]
 
-[node name="Start_Position" type="Marker2D" parent="."]
-position = Vector2(360, 240)
+[node name="Floor" type="Node2D" parent="."]
+z_index = -130
+scale = Vector2(16, 16)
 
-[node name="Player" parent="." instance=ExtResource("3_h2yge")]
-speed = 500.0
-spd_mult = 25.0
+[node name="ColorRect" type="ColorRect" parent="Floor"]
+offset_left = -2215.0
+offset_top = -1599.0
+offset_right = 2255.0
+offset_bottom = 1639.0
+color = Color(0.65098, 0.85098, 0.282353, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="Follower_Enemy" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(190, 169)
+[node name="ColorRect2" type="ColorRect" parent="Floor"]
+material = SubResource("ShaderMaterial_0ld40")
+offset_left = -2215.0
+offset_top = -1599.0
+offset_right = 2255.0
+offset_bottom = 1639.0
+color = Color(0, 0.217548, 0, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="Shooter_Enemy" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(458, 250)
+[node name="Tree" parent="." instance=ExtResource("2_ya4ey")]
+position = Vector2(-200, 388)
 
-[node name="Ship" parent="." instance=ExtResource("5_tbgi4")]
-position = Vector2(121, 240)
+[node name="Tree3" parent="." instance=ExtResource("2_ya4ey")]
+position = Vector2(321, 661)
+
+[node name="Tree4" parent="." instance=ExtResource("2_ya4ey")]
+position = Vector2(518, -98)
+
+[node name="Tree5" parent="." instance=ExtResource("2_ya4ey")]
+position = Vector2(1543, 482)
+
+[node name="Tree2" parent="." instance=ExtResource("3_eb6dy")]
+position = Vector2(1332, -158)
+
+[node name="Tree6" parent="." instance=ExtResource("3_eb6dy")]
+position = Vector2(973, 28)
+
+[node name="Tree7" parent="." instance=ExtResource("3_eb6dy")]
+position = Vector2(20, -314)
+
+[node name="Tree8" parent="." instance=ExtResource("3_eb6dy")]
+position = Vector2(-919, 221)
+
+[node name="Tree9" parent="." instance=ExtResource("3_eb6dy")]
+position = Vector2(-557, 694)
+
+[node name="Stone" parent="." instance=ExtResource("4_trceg")]
+
+[node name="Stone2" parent="." instance=ExtResource("4_trceg")]
+position = Vector2(748, -208)
+
+[node name="Stone3" parent="." instance=ExtResource("4_trceg")]
+position = Vector2(1668, 439)
+
+[node name="Tigdik" parent="." instance=ExtResource("3_jyhfs")]
+position = Vector2(63, 499)
+
+[node name="Slime" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(1111, 627)
+
+[node name="Crasher" parent="." instance=ExtResource("10_jbj1t")]
+position = Vector2(-404, -72)
+
+[node name="Player" parent="." instance=ExtResource("2_sugp2")]
+position = Vector2(604, 348)
+
+[node name="M_G_M" parent="Player" instance=ExtResource("6_a8y0u")]
+position = Vector2(70, 1)
+
+[node name="ObjectSpawner" type="Node2D" parent="."]
+
+[node name="ObjectTimer" type="Timer" parent="ObjectSpawner"]
+
+[node name="EntitySpawner" type="Node2D" parent="."]
+
+[node name="EntityTimer" type="Timer" parent="EntitySpawner"]

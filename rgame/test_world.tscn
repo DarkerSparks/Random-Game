@@ -1,0 +1,106 @@
+[gd_scene load_steps=14 format=3 uid="uid://ct0bcsf1o1v6g"]
+
+[ext_resource type="Shader" uid="uid://vrc5rp5ou1xx" path="res://Misc/Shader/FOG.gdshader" id="1_dxppu"]
+[ext_resource type="PackedScene" uid="uid://d2jhhjgvnaqlf" path="res://Assets/Skins/tree1.tscn" id="2_gy3sr"]
+[ext_resource type="PackedScene" uid="uid://3wmootgb0nme" path="res://Assets/Skins/tree2.tscn" id="3_1lwx6"]
+[ext_resource type="PackedScene" uid="uid://b3vae1hn2qudi" path="res://Assets/Skins/stone.tscn" id="4_cnaw2"]
+[ext_resource type="PackedScene" uid="uid://b4qmpmnxu68vw" path="res://Assets/Skins/Player.tscn" id="5_kt6p6"]
+[ext_resource type="PackedScene" uid="uid://coutovl7lvn4b" path="res://Assets/Skins/m_g_m.tscn" id="6_ud3vi"]
+[ext_resource type="PackedScene" uid="uid://cpeju31scin5m" path="res://Assets/Skins/tigdik.tscn" id="6_uu1iw"]
+[ext_resource type="PackedScene" uid="uid://cvmac5tmesmiu" path="res://Assets/Skins/p_ike.tscn" id="8_5457m"]
+[ext_resource type="PackedScene" uid="uid://dc84ognrigc3t" path="res://Assets/Skins/slime.tscn" id="9_ivea3"]
+[ext_resource type="PackedScene" uid="uid://dtj7pg5ts1t1h" path="res://Assets/Skins/Crasher.tscn" id="10_jvck6"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gy3sr"]
+noise_type = 3
+frequency = 0.0142
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ud3vi"]
+seamless = true
+noise = SubResource("FastNoiseLite_gy3sr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dsnr4"]
+shader = ExtResource("1_dxppu")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ud3vi")
+shader_parameter/density = 0.272
+shader_parameter/speed = Vector2(0, 0)
+
+[node name="TestWorld" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Floor" type="Node2D" parent="."]
+z_index = -130
+
+[node name="ColorRect" type="ColorRect" parent="Floor"]
+offset_left = -2215.0
+offset_top = -1599.0
+offset_right = 2255.0
+offset_bottom = 1639.0
+color = Color(0.65098, 0.85098, 0.282353, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="Floor"]
+material = SubResource("ShaderMaterial_dsnr4")
+offset_left = -2215.0
+offset_top = -1599.0
+offset_right = 2255.0
+offset_bottom = 1639.0
+color = Color(0, 0.217548, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Tree" parent="." instance=ExtResource("2_gy3sr")]
+position = Vector2(-200, 388)
+
+[node name="Tree3" parent="." instance=ExtResource("2_gy3sr")]
+position = Vector2(321, 661)
+
+[node name="Tree4" parent="." instance=ExtResource("2_gy3sr")]
+position = Vector2(518, -98)
+
+[node name="Tree5" parent="." instance=ExtResource("2_gy3sr")]
+position = Vector2(1543, 482)
+
+[node name="Tree2" parent="." instance=ExtResource("3_1lwx6")]
+position = Vector2(1332, -158)
+
+[node name="Tree6" parent="." instance=ExtResource("3_1lwx6")]
+position = Vector2(973, 28)
+
+[node name="Tree7" parent="." instance=ExtResource("3_1lwx6")]
+position = Vector2(20, -314)
+
+[node name="Tree8" parent="." instance=ExtResource("3_1lwx6")]
+position = Vector2(-919, 221)
+
+[node name="Tree9" parent="." instance=ExtResource("3_1lwx6")]
+position = Vector2(-557, 694)
+
+[node name="Stone" parent="." instance=ExtResource("4_cnaw2")]
+
+[node name="Stone2" parent="." instance=ExtResource("4_cnaw2")]
+position = Vector2(748, -208)
+
+[node name="Stone3" parent="." instance=ExtResource("4_cnaw2")]
+position = Vector2(1668, 439)
+
+[node name="Skin" parent="." instance=ExtResource("5_kt6p6")]
+position = Vector2(573, 328)
+
+[node name="M_G_M" parent="Skin" instance=ExtResource("6_ud3vi")]
+position = Vector2(70, 1)
+
+[node name="Camera2D2" type="Camera2D" parent="Skin"]
+position = Vector2(0, -12)
+zoom = Vector2(0.45, 0.45)
+
+[node name="Tigdik" parent="." instance=ExtResource("6_uu1iw")]
+position = Vector2(63, 499)
+
+[node name="PIke" parent="Tigdik" instance=ExtResource("8_5457m")]
+position = Vector2(26, -2)
+
+[node name="Slime" parent="." instance=ExtResource("9_ivea3")]
+position = Vector2(1111, 627)
+
+[node name="Crasher" parent="." instance=ExtResource("10_jvck6")]
+position = Vector2(-404, -72)

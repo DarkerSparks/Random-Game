@@ -27,6 +27,8 @@ func GeteEnemyVel(pl_angle, enemy_speed, delta):
 	return vel
 	# position += vel
 	
+func GetPlayerPosition():
+	return player_node.global_position
 
 func GetPlayerAngle(enemy_position):
 	if (player_node != null):
