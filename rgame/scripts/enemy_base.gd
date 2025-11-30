@@ -13,8 +13,8 @@ var player_node
 
 var screenSize
 	
-func EnemyStartUp(init_player_node, enemy_speed, enemy_spd_mult):
-	enemy_speed *= enemy_spd_mult
+func EnemyStartUp(init_player_node, _enemy_speed, enemy_spd_mult):
+	_enemy_speed *= enemy_spd_mult
 	player_node = init_player_node
 	# player_node = get_parent().find_child("Player")
 	

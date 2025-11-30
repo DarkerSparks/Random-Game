@@ -22,7 +22,7 @@ func _process(delta):
 	if (base_script.GetPlayerEnemyDist(position) > min_dist):
 		position += vel
 	
-	print(position)
+	# print(position)
 		
 		
 		

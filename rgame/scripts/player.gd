@@ -1,5 +1,7 @@
 extends Area2D
 
+signal hit
+
 @export var speed : float = 400.0
 @export var spd_mult : float = 10
 
@@ -73,3 +75,13 @@ func VertInputs():
 	return 0;
 	# show()
 	# pass # Replace with function body.
+
+
+func _on_body_entered(_body):
+	hide() # Player disappears after being hit.
+	hit.emit()
+	# Must be deferred as we can't change physics properties on a physics callback.
+	$CollisionShape2D.set_deferred("disabled", true)
+
+	# Must be deferred as we can't change physics properties on a physics callback.
+	# $CollisionShape2D.set_deferred("disabled", true)

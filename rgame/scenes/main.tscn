@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://xfa12lro4530"]
+[gd_scene load_steps=6 format=3 uid="uid://xfa12lro4530"]
 
 [ext_resource type="Script" uid="uid://cd1nxucwanvdc" path="res://scripts/main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cwfc8pc2twm6a" path="res://scenes/follower_enemy.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://beu0cptft1dro" path="res://scenes/player.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://deaw226pciyqo" path="res://scenes/shooter_enemy.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bltadbf6mj4nd" path="res://scenes/ship.tscn" id="5_tbgi4"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ig7tw")
@@ -28,4 +29,7 @@ spd_mult = 25.0
 position = Vector2(190, 169)
 
 [node name="Shooter_Enemy" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(474, 251)
+position = Vector2(458, 250)
+
+[node name="Ship" parent="." instance=ExtResource("5_tbgi4")]
+position = Vector2(121, 240)
