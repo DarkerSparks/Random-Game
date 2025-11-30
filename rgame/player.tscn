@@ -7,9 +7,6 @@
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_onrkg")
-speed = 500.0
-spd_mult = 50.0
-jumpHeight = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_onrkg")
@@ -18,3 +15,8 @@ shape = SubResource("RectangleShape2D_onrkg")
 position = Vector2(-4.76837e-07, -4.76837e-07)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("1_4flbx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+
+[node name="Weapon_Holster" type="Marker2D" parent="."]
