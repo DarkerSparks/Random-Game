@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://deaw226pciyqo"]
+
+[ext_resource type="Script" uid="uid://b38bqgifpdqy2" path="res://scripts/shooter_enemy.gd" id="1_vfjn5"]
+[ext_resource type="Texture2D" uid="uid://dt13nd7qx05kn" path="res://sprites/shooter_enemy_temp.png" id="2_q0w40"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4h3x"]
+
+[node name="Shooter_Enemy" type="Area2D"]
+script = ExtResource("1_vfjn5")
+max_health = 3
+speed = 120.0
+spd_mult = 22.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, -4.76837e-07)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_q0w40")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v4h3x")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://xfa12lro4530"]
+
+[ext_resource type="Script" uid="uid://cd1nxucwanvdc" path="res://scripts/main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cwfc8pc2twm6a" path="res://scenes/follower_enemy.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://beu0cptft1dro" path="res://scenes/player.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://deaw226pciyqo" path="res://scenes/shooter_enemy.tscn" id="4_1bvp3"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ig7tw")
+
+[node name="Enemy_Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Weapon_Timer" type="Timer" parent="."]
+
+[node name="Start_Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Start_Position" type="Marker2D" parent="."]
+position = Vector2(360, 240)
+
+[node name="Player" parent="." instance=ExtResource("3_h2yge")]
+speed = 500.0
+spd_mult = 25.0
+
+[node name="Follower_Enemy" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(190, 169)
+
+[node name="Shooter_Enemy" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(474, 251)

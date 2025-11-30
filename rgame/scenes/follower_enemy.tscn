@@ -1,12 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwfc8pc2twm6a"]
 
-[ext_resource type="Script" uid="uid://dh8s657jhjbrf" path="res://follower_enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://duhl0kn0kvulg" path="res://follower_enemy_temp.png" id="1_7k104"]
+[ext_resource type="Script" uid="uid://dh8s657jhjbrf" path="res://scripts/follower_enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://duhl0kn0kvulg" path="res://sprites/follower_enemy_temp.png" id="1_7k104"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xaro"]
 
-[node name="Enemy" type="Area2D"]
+[node name="Follower_Enemy" type="Area2D"]
 script = ExtResource("1_4gyqm")
+max_health = 5
+speed = 72.0
+spd_mult = 20.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7xaro")

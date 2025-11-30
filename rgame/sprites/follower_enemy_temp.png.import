@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhallttt7u51x"
-path="res://.godot/imported/poison_enemy_temp.png-b3cf151c3f0b7ba7a2b097355afc6626.ctex"
+uid="uid://duhl0kn0kvulg"
+path="res://.godot/imported/follower_enemy_temp.png-02f96ca46b9151ad474ec5cb2b25f429.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://poison_enemy_temp.png"
-dest_files=["res://.godot/imported/poison_enemy_temp.png-b3cf151c3f0b7ba7a2b097355afc6626.ctex"]
+source_file="res://sprites/follower_enemy_temp.png"
+dest_files=["res://.godot/imported/follower_enemy_temp.png-02f96ca46b9151ad474ec5cb2b25f429.ctex"]
 
 [params]
 
